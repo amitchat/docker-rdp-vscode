@@ -6,8 +6,8 @@ where I could setup a standalone development environment
 that could run Visual Studio Code. Being able to RDP from Windows
 into this VM container and be able to code and debug makes it 
 more pleasant!  I also wanted to make sure some conveniences 
-were workinglike clipboard support across Windows/Linux
-as the default XRDP package doesn't appear to support it. 
+were working, like clipboard support across Windows/Linux
+as the default XRDP package installed doesn't appear to support it. 
 Also, it takes care of installing some nicer fonts and fixes
 the Tab key mapping.
 
