@@ -23,6 +23,9 @@ as user `vscode` with password `vscode` (defaults).
 
 When prompted to pick a session use the "Default".
 
+Also if you are hosting this on a Cloud VM, make sure to expose the port running the 
+RDP server by enabling it as an endpoint rule in your cloud network configuration.
+
 Build
 -----
 
