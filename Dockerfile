@@ -105,7 +105,7 @@ RUN echo "xfce4-session" > /home/$USERNAME/.xsession \
  && mkdir /home/$USERNAME/.config/xfce4/terminal 
 
 # Install VSCode
-RUN wget http://go.microsoft.com/fwlink/?LinkID=760868 -O code.deb \
+RUN wget https://go.microsoft.com/fwlink/?LinkID=760868 -O code.deb \
  && dpkg -i code.deb \
  && sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/x86_64-linux-gnu/libxcb.so.1 \
  && rm -f code.deb \
