@@ -33,3 +33,9 @@ Build
 
 Reconfigure the USERNAME and PASSWORD variables in Dockerfile to alter the
 login accounts for RDP.
+
+Testing
+-------
+
+Besides the "Works on my Machine!" test, I verified this works on an Azure Linux Ubuntu 
+provisioned VM.
