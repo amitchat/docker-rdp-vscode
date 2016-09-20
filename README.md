@@ -3,7 +3,7 @@ Visual Studio Code with RDP support in a Docker Container
 
 I wanted to be able to provision an Azure Linux Ubuntu VM 
 where I could setup a standalone development environment 
-that could runVisual Studio Code. Being able to RDP from Windows
+that could run Visual Studio Code. Being able to RDP from Windows
 into this VM container and be able to code and debug makes it 
 more pleasant!  I also wanted to make sure some conveniences 
 were workinglike clipboard support across Windows/Linux
