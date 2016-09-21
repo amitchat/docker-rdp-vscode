@@ -66,6 +66,8 @@ RUN git clone https://github.com/neutrinolabs/xrdp.git \
 # Setup XRDP
 RUN sed -i.bak '/\[xrdp1\]/i [xrdp0] \nname=Default \nlib=libxup.so \nusername=ask \npassword=ask \nip=127.0.0.1 \nport=-1 \nxserverbpp=24 \ncode=20 \n' /etc/xrdp/xrdp.ini \
  && sed -i.bak 's/max_bpp=32/max_bpp=24 use_compression=yes/' /etc/xrdp/xrdp.ini \
+ && sed -i.bak 's/autorun=xrdp1/autorun=xrdp0/' /etc/xrdp/xrdp.ini \
+ && sed -i.bak 's/rdpsnd=true/rdpsnd=false/' /etc/xrdp/xrdp.ini \
  && rm -f /etc/xrdp/startwm.sh \
  && ln -s /etc/X11/Xsession /etc/xrdp/startwm.sh \
  && mkdir /usr/share/doc/xrdp \
