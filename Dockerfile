@@ -19,6 +19,7 @@ ENV PASSWORD vscode
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common \
  && add-apt-repository ppa:hermlnx/xrdp -y \
+ && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     xfce4 \
     ubuntu-desktop \
