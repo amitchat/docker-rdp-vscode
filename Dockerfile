@@ -16,30 +16,31 @@ ENV USERNAME vscode
 ENV PASSWORD vscode
 
 # Install Packages
-RUN apt-get update \ 
+RUN add-apt-repository ppa:hermlnx/xrdp -y
+RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    xfce4 \ 
-    ubuntu-desktop \ 
+    xfce4 \
+    ubuntu-desktop \
     xubuntu-desktop \
     git \
-    libx11-dev \ 
-    libxfixes-dev \ 
-    libssl-dev  \
+    libx11-dev \
+    libxfixes-dev \
+    libssl-dev \
     libpam0g-dev \
     libtool \
-    libjpeg-dev \ 
+    libjpeg-dev \
     flex \
     bison \
-    gettext \ 
+    gettext \
     autoconf \
-    libxml-parser-perl \ 
+    libxml-parser-perl \
     libfuse-dev \
     xsltproc \
-    libxrandr-dev \ 
+    libxrandr-dev \
     python-libxml2 \
     nasm \
-    xserver-xorg-dev \ 
-    fuse \ 
+    xserver-xorg-dev \
+    fuse \
     xrdp \
     vim \
     supervisor
@@ -91,9 +92,9 @@ RUN sed -i.bak '/\[xrdp1\]/i [xrdp0] \nname=Default \nlib=libxup.so \nusername=a
 
 # Install Infinality for Better Font
 RUN apt-add-repository ppa:no1wantdthisname/ppa \
- && apt-get update \ 
+ && apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    fontconfig-infinality \ 
+    fontconfig-infinality \
  && bash /etc/fonts/infinality/infctl.sh setstyle osx
 
 # Create User Account
@@ -104,7 +105,7 @@ RUN useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $USER
 RUN echo "xfce4-session" > /home/$USERNAME/.xsession \
  && chmod u+x /home/$USERNAME/.xsession \
  && mkdir /home/$USERNAME/.config/xfce4 \
- && mkdir /home/$USERNAME/.config/xfce4/terminal 
+ && mkdir /home/$USERNAME/.config/xfce4/terminal
 
 # Install VSCode
 RUN wget https://go.microsoft.com/fwlink/?LinkID=760868 -O code.deb \
